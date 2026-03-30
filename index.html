@@ -23,7 +23,7 @@
             --glow: 0 0 20px rgba(245, 197, 66, 0.3);
             --royal-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
@@ -72,114 +72,109 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(245, 197, 66, 0.2);
-            padding: 20px 0;
+            padding: 15px 0;
             box-shadow: var(--royal-shadow);
         }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+            padding: 0 30px;
+            flex-wrap: wrap;
+        }
 
-/* container remains unchanged */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            flex-shrink: 0; 
+        }
 
-/* logo container styling remains unchanged */
-.logo-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden; /* ensures image stays inside circle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--royal-gold);
-    box-shadow: var(--glow);
-    position: relative;
-    transition: var(--transition);
-    background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
-}
+        .logo-img { 
+            width: 70px; 
+            height: 70px; 
+            border-radius: 50%; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border: 3px solid var(--royal-gold); 
+            box-shadow: var(--glow); 
+            position: relative; 
+            transition: var(--transition); 
+            background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold)); 
+            flex-shrink: 0; 
+        }
 
-/* ONLY THIS BLOCK FIXES THE IMAGE FITTING */
-.logo-img img {
-    width: 100%;          /* fill container width */
-    height: 100%;         /* fill container height */
-    object-fit: contain;  /* show the whole image without zoom/cropping */
-    display: block;       /* remove extra inline spacing */
-}
+        .logo-img img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+            display: block; 
+        }
 
-/* shimmer effect remains unchanged */
-.logo-img:before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: rotate(45deg);
-    transition: var(--transition);
-}
+        .logo-img:before { 
+            content: ''; 
+            position: absolute; 
+            top: -50%; 
+            left: -50%; 
+            width: 200%; 
+            height: 200%; 
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent); 
+            transform: rotate(45deg); 
+            transition: var(--transition); 
+        }
 
-/* hover effects remain unchanged */
-.logo-img:hover {
-    transform: scale(1.05) rotate(5deg);
-    box-shadow: 0 0 30px rgba(245, 197, 66, 0.5);
-}
+        .logo-img:hover { 
+            transform: scale(1.05) rotate(5deg); 
+            box-shadow: 0 0 30px rgba(245, 197, 66, 0.5); 
+        }
 
-.logo-img:hover:before {
-    left: 150%;
-}
-
-
- .logo-real {
-    display: inline-block;    /* keeps container only as big as image */
-    border-radius: 50%;       /* optional: makes circle if you want */
-    overflow: hidden;         /* optional: hides anything outside circle */
-    border: 3px solid var(--royal-gold); /* optional border */
-    box-shadow: var(--glow);  /* optional glow */
-}
-
-.logo-real img {
-    display: block;           /* removes bottom spacing */
-    width: auto;              /* original width */
-    height: auto;             /* original height */
-    max-width: 100%;          /* responsive: doesn’t overflow container */
-}
-
-
+        .logo-img:hover:before { 
+            left: 150%; 
+        }
 
         .logo-text {
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--royal-gold);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
 
         .logo-subtext {
             font-family: 'Great Vibes', cursive;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--light-gold);
-            margin-top: 5px;
+            margin-top: 3px;
             opacity: 0.9;
+        }
+
+        nav { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 50px;
+            gap: 40px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--light-gold);
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 500;
             position: relative;
-            padding: 10px 0;
+            padding: 8px 0;
             transition: var(--transition);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
         }
 
         .nav-links a:before {
@@ -218,99 +213,71 @@
             width: 100%;
         }
 
- .royal-phone {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: linear-gradient(135deg, rgba(245, 197, 66, 0.1), rgba(100, 27, 46, 0.1));
-    padding: 15px 25px;
-    border-radius: 50px;
-    border: 1px solid rgba(245, 197, 66, 0.3);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    margin-left: auto;
-    flex-shrink: 0;
-    white-space: nowrap;
-}
-
-.royal-phone:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    background: linear-gradient(45deg, var(--royal-gold), var(--burgundy), var(--royal-gold));
-    z-index: -1;
-    border-radius: 50px;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.royal-phone:hover:before {
-    opacity: 0.3;
-    animation: royalGlow 2s linear infinite;
-}
-
-@keyframes royalGlow {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
-}
-
-.royal-phone i {
-    font-size: 1.5rem;
-    color: var(--royal-gold);
-    position: relative;
-    z-index: 2;
-    transition: var(--transition);
-}
-
-.royal-phone span {
-    color: var(--light-gold);
-    font-size: 1.1rem;
-    font-weight: 600;
-    position: relative;
-    z-index: 2;
-    transition: var(--transition);
-}
-
-.royal-phone:hover i {
-    transform: scale(1.1);
-    color: var(--light-gold);
-}
-
-.royal-phone:hover span {
-    color: var(--royal-gold);
-    text-shadow: 0 0 10px rgba(245, 197, 66, 0.5);
-}
-
-        @keyframes royalGlow {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
+        .royal-phone { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: linear-gradient(135deg, rgba(245, 197, 66, 0.1), rgba(100, 27, 46, 0.1)); 
+            padding: 10px 18px; 
+            border-radius: 50px; 
+            border: 1px solid rgba(245, 197, 66, 0.3); 
+            transition: var(--transition); 
+            position: relative; 
+            white-space: nowrap; 
+            flex-shrink: 0; 
         }
 
-        .royal-phone i {
-            font-size: 1.5rem;
-            color: var(--royal-gold);
+        .royal-phone:before { 
+            content: ''; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: calc(100% - 4px); 
+            height: calc(100% - 4px); 
+            background: linear-gradient(45deg, var(--royal-gold), var(--burgundy), var(--royal-gold)); 
+            z-index: -1; 
+            border-radius: 50px; 
+            opacity: 0; 
+            transition: var(--transition); 
         }
 
-        .royal-phone span {
-            color: var(--light-gold);
-            font-size: 1.1rem;
-            font-weight: 600;
-        }.header-container {
-    display: flex;
-    justify-content: space-between; /* This distributes space between items */
-    align-items: center;
-    width: 100%; /* Ensures full width */
-}  
-nav {
-    flex: 1; /* Takes available space */
-    display: flex;
-    justify-content: center; /* Centers the nav links */
-}
+        .royal-phone:hover:before { 
+            opacity: 0.3; 
+            animation: royalGlow 2s linear infinite; 
+        }
+
+        @keyframes royalGlow { 
+            0% { filter: hue-rotate(0deg); } 
+            100% { filter: hue-rotate(360deg); } 
+        }
+
+        .royal-phone i { 
+            font-size: 1.5rem; 
+            color: var(--royal-gold); 
+            position: relative; 
+            z-index: 2; 
+            transition: var(--transition); 
+        }
+
+        .royal-phone span { 
+            color: var(--light-gold); 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            position: relative; 
+            z-index: 2; 
+            transition: var(--transition); 
+        }
+
+        .royal-phone:hover i { 
+            transform: scale(1.1); 
+            color: var(--light-gold); 
+        }
+
+        .royal-phone:hover span { 
+            color: var(--royal-gold); 
+            text-shadow: 0 0 10px rgba(245, 197, 66, 0.5); 
+        }
 
         .mobile-menu-btn {
             display: none;
@@ -320,26 +287,25 @@ nav {
             font-size: 2rem;
             cursor: pointer;
         }
-        /* Hero Section - Royal Palace Entrance */
-       .hero {
-    height: 100vh;
-    background: 
-        /* Pakistani food image - positioned top right, 30% width, fades left */
-        linear-gradient(to left, transparent 0%, rgba(10, 8, 6, 0.8) 30%, rgba(10, 8, 6, 0.9) 70%, rgba(10, 8, 6, 0.95) 100%),
-        url('https://media.istockphoto.com/id/995903748/photo/smoked-and-spicy-tandoori-chicken-grilling-with-smoke.jpg?s=612x612&w=0&k=20&c=xq_apF2Osk5HYFOgBS9crRi1puLozxyGWFuCUV0mhYg=') top right / 30% auto no-repeat,
-        /* Keep your existing gradients */
-        radial-gradient(ellipse at 20% 20%, rgba(245, 197, 66, 0.15) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 80%, rgba(100, 27, 46, 0.15) 0%, transparent 40%),
-        linear-gradient(to bottom, rgba(10, 8, 6, 0.9), rgba(10, 8, 6, 0.95));
-    background-size: cover, auto, cover, cover, cover;
-    background-position: center, top right, center, center, center;
-    background-attachment: fixed, fixed, fixed, fixed, fixed;
+
+        /* ============================================ */
+/* ENHANCED HERO SECTION STYLES */
+/* ============================================ */
+
+/* ============================================ */
+/* ENHANCED HERO SECTION - CLASSIC ROYAL STYLE */
+/* ============================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://media.istockphoto.com/id/995903748/photo/smoked-and-spicy-tandoori-chicken-grilling-with-smoke.jpg') center/cover no-repeat fixed;
     display: flex;
     align-items: center;
-    text-align: center;
-    position: relative;
+    justify-content: center;
     overflow: hidden;
-    margin-top: 120px;
+    margin-top: 95px;
 }
 
 .hero:before {
@@ -349,103 +315,324 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(245, 197, 66, 0.05) 50%, transparent 70%);
-    animation: rayAnimation 8s linear infinite;
-}
-
-@keyframes rayAnimation {
-    0% { transform: translateX(-100%) translateY(-100%); }
-    100% { transform: translateX(100%) translateY(100%); }
+    background: radial-gradient(circle at 30% 30%, rgba(245, 197, 66, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 30px;
     position: relative;
     z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    text-align: center;
 }
 
-.hero h1 {
-    font-size: 5rem;
-    margin-bottom: 30px;
-    text-shadow: 
-        0 0 20px rgba(245, 197, 66, 0.5),
-        0 0 40px rgba(245, 197, 66, 0.3),
-        2px 2px 4px rgba(0, 0, 0, 0.8);
+/* Royal Logo Badge */
+.royal-logo-badge {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--royal-gold);
+    box-shadow: 0 0 30px rgba(245, 197, 66, 0.5);
+    animation: logoGlow 3s ease-in-out infinite;
+    background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
+}
+
+.royal-logo-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@keyframes logoGlow {
+    0%, 100% { box-shadow: 0 0 30px rgba(245, 197, 66, 0.5); transform: scale(1); }
+    50% { box-shadow: 0 0 50px rgba(245, 197, 66, 0.8); transform: scale(1.05); }
+}
+
+.welcome-wrapper {
+    margin-bottom: 20px;
+}
+
+.welcome-wrapper .script-font {
+    font-size: 2.8rem;
+    color: var(--light-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease;
+}
+
+.royal-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.divider-line {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+}
+
+.royal-main-title {
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.title-line {
+    display: block;
+    font-size: 5.5rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    letter-spacing: 8px;
     line-height: 1.2;
-    letter-spacing: 3px;
-    animation: titleGlow 3s ease-in-out infinite alternate;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes titleGlow {
-    from { text-shadow: 0 0 20px rgba(245, 197, 66, 0.5), 0 0 40px rgba(245, 197, 66, 0.3); }
-    to { text-shadow: 0 0 30px rgba(245, 197, 66, 0.7), 0 0 60px rgba(245, 197, 66, 0.5), 0 0 80px rgba(245, 197, 66, 0.3); }
+.title-line.gold {
+    background: linear-gradient(45deg, var(--royal-gold), #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 6rem;
 }
 
-        .hero .script-font {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-            display: block;
-            opacity: 0.9;
-        }
+.royal-subtitle {
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.4s both;
+}
 
-        .hero p {
-            font-size: 1.4rem;
-            color: var(--light-gold);
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-        }
+.royal-subtitle .script-font {
+    font-size: 2.2rem;
+    color: var(--light-gold);
+    display: block;
+    margin-bottom: 5px;
+}
 
-        .royal-cta {
-            background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
-            color: var(--burgundy);
-            border: none;
-            padding: 22px 60px;
-            font-size: 1.3rem;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            border-radius: 0;
-            cursor: pointer;
-            transition: var(--transition);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 
-                0 0 20px rgba(245, 197, 66, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        }
+.subtitle-location {
+    font-size: 1.4rem;
+    color: rgba(245, 197, 66, 0.8);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    letter-spacing: 2px;
+}
 
-        .royal-cta:before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--royal-gold), var(--light-gold), var(--royal-gold));
-            z-index: -1;
-            filter: blur(10px);
-            opacity: 0;
-            transition: var(--transition);
-        }
+.royal-description {
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    font-family: 'Playfair Display', serif;
+    animation: fadeInUp 1s ease 0.6s both;
+    padding: 20px 0;
+}
 
-        .royal-cta:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 
-                0 0 30px rgba(245, 197, 66, 0.7),
-                0 10px 30px rgba(0, 0, 0, 0.3);
-        }
+.royal-features {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    animation: fadeInUp 1s ease 0.8s both;
+    flex-wrap: wrap;
+}
 
-        .royal-cta:hover:before {
-            opacity: 1;
-        }
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--royal-gold);
+    background: rgba(245, 197, 66, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 197, 66, 0.3);
+    transition: var(--transition);
+}
+
+.feature-item:hover i {
+    transform: translateY(-5px) scale(1.1);
+    border-color: var(--royal-gold);
+    box-shadow: 0 0 20px rgba(245, 197, 66, 0.3);
+}
+
+.feature-item span {
+    font-size: 0.9rem;
+    color: var(--light-gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+.cta-wrapper {
+    animation: fadeInUp 1s ease 1s both;
+}
+
+.royal-cta {
+    background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
+    color: var(--burgundy);
+    border: none;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 30px rgba(245, 197, 66, 0.3);
+}
+
+.royal-cta:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 40px rgba(245, 197, 66, 0.5);
+}
+
+.cta-icon {
+    background: rgba(100, 27, 46, 0.2);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.royal-cta:hover .cta-icon {
+    transform: translateX(5px);
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.quick-action-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--light-gold);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 1px solid rgba(245, 197, 66, 0.2);
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.quick-action-link:hover {
+    background: rgba(245, 197, 66, 0.1);
+    border-color: var(--royal-gold);
+    transform: translateY(-2px);
+}
+
+.quick-action-link i {
+    color: var(--royal-gold);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    animation: bounce 2s infinite;
+}
+
+.scroll-text {
+    font-size: 0.8rem;
+    color: var(--light-gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.scroll-arrow {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(245, 197, 66, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--royal-gold);
+}
+
+.scroll-arrow:hover {
+    border-color: var(--royal-gold);
+    background: rgba(245, 197, 66, 0.1);
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-20px); }
+    60% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .title-line { font-size: 4rem; }
+    .title-line.gold { font-size: 4.5rem; }
+}
+
+@media (max-width: 768px) {
+    .hero { margin-top: 80px; background-attachment: scroll; }
+    .title-line { font-size: 2.8rem; letter-spacing: 4px; }
+    .title-line.gold { font-size: 3.2rem; }
+    .welcome-wrapper .script-font { font-size: 2rem; }
+    .royal-subtitle .script-font { font-size: 1.6rem; }
+    .subtitle-location { font-size: 1.1rem; }
+    .royal-description { font-size: 1rem; }
+    .feature-item i { width: 50px; height: 50px; font-size: 1.5rem; }
+    .quick-actions { flex-direction: column; align-items: center; }
+    .quick-action-link { width: 200px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .title-line { font-size: 2rem; letter-spacing: 2px; }
+    .title-line.gold { font-size: 2.4rem; }
+    .royal-logo-badge { width: 80px; height: 80px; }
+    .royal-cta { padding: 14px 25px; font-size: 1rem; }
+}
 
         /* Menu Sections - Royal Feast */
         .section {
@@ -480,6 +667,12 @@ nav {
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
 
         .section-title h2:before,
         .section-title h2:after {
@@ -499,99 +692,99 @@ nav {
             right: 0;
         }
 
-        .section-title h2:after {
-            content: '✦';
+        /* Menu Navigation Container */
+        .menu-nav-container {
+            display: flex;
+            gap: 12px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
 
-        /* Royal Category Cards */
+        .menu-nav-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(245, 197, 66, 0.15), rgba(212, 160, 23, 0.15));
+            border: 2px solid rgba(245, 197, 66, 0.4);
+            color: var(--light-gold);
+            cursor: pointer;
+            border-radius: 25px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.8px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            position: relative;
+            z-index: 100;
+        }
+
+        .menu-nav-btn i {
+            font-size: 1rem;
+        }
+
+        .menu-nav-btn:hover {
+            background: linear-gradient(135deg, rgba(245, 197, 66, 0.35), rgba(212, 160, 23, 0.3));
+            border-color: var(--royal-gold);
+            box-shadow: 0 0 20px rgba(245, 197, 66, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .menu-nav-btn.active {
+            background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
+            border-color: var(--royal-gold);
+            color: var(--night-black);
+            box-shadow: 0 0 25px rgba(245, 197, 66, 0.6);
+            font-weight: 800;
+        }
+
+        /* Menu Category Visibility */
         .royal-category {
+            display: none !important;
             margin-bottom: 100px;
             position: relative;
         }
-/* Category Header Image Effect */
-.category-header {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 50px;
-    padding: 30px 40px;
-    background: linear-gradient(90deg, 
-        rgba(100, 27, 46, 0.2) 0%, 
-        rgba(245, 197, 66, 0.1) 50%, 
-        rgba(100, 27, 46, 0.2) 100%);
-    border: 1px solid rgba(245, 197, 66, 0.2);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-    min-height: 180px; /* Increased height for image */
-}
 
-.category-text {
-    flex: 1;
-    position: relative;
-    z-index: 2;
-}
+        .royal-category.active {
+            display: block !important;
+            animation: categoryFade 0.5s ease-in;
+        }
 
-.category-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 35%; /* Adjust width percentage as needed (20-35%) */
-    background-size: cover;
-    background-position: center;
-    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0) 100%);
-    z-index: 1;
-    opacity: 0.9;
-    transition: all 0.8s ease;
-}
+        @keyframes categoryFade {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.category-header:hover .category-image {
-    opacity: 0.7;
-    transform: scale(1.05);
-    mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
-}
+        /* Category Header Image Effect */
+        .category-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 30px; 
+            margin-bottom: 50px; 
+            padding: 30px 40px; 
+            background: linear-gradient(90deg, rgba(100, 27, 46, 0.2) 0%, rgba(245, 197, 66, 0.1) 50%, rgba(100, 27, 46, 0.2) 100%); 
+            border: 1px solid rgba(245, 197, 66, 0.2); 
+            border-radius: 15px; 
+            backdrop-filter: blur(10px); 
+            position: relative; 
+            overflow: hidden; 
+            min-height: 180px;
+        }
 
-/* Existing category header before effect - update */
-.category-header:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: var(--transition);
-    z-index: 2;
-}
-
-.category-header:hover:before {
-    left: 100%;
-}
-
-/* Keep existing category styles, these are additions */
-.category-icon {
-    position: relative;
-    z-index: 3;
-}
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 50px;
-            padding: 30px 40px;
-            background: linear-gradient(90deg, 
-                rgba(100, 27, 46, 0.2) 0%, 
-                rgba(245, 197, 66, 0.1) 50%, 
-                rgba(100, 27, 46, 0.2) 100%);
-            border: 1px solid rgba(245, 197, 66, 0.2);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
+        .category-text { 
+            flex: 1; 
+            position: relative; 
+            z-index: 2; 
         }
 
         .category-header:before {
@@ -625,7 +818,7 @@ nav {
         }
 
         .category-title {
-            font-size: 3rem;
+            font-size: 2.2rem;
             color: var(--royal-gold);
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -659,6 +852,21 @@ nav {
             overflow: hidden;
             transform-style: preserve-3d;
             box-shadow: var(--royal-shadow);
+            background-attachment: local;
+        }
+
+        .menu-item-bg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 0;
+            mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%);
         }
 
         .royal-menu-item:before {
@@ -714,7 +922,7 @@ nav {
         }
 
         .item-price {
-            font-size: 2rem;
+            font-size: 1.4rem;
             color: var(--light-gold);
             font-weight: 700;
             background: linear-gradient(45deg, var(--royal-gold), var(--light-gold));
@@ -761,28 +969,19 @@ nav {
             position: relative;
         }
 
-        .royal-special:before {
-            content: '👑';
-            position: absolute;
-            top: -15px;
-            right: 30px;
-            font-size: 2rem;
-            z-index: 1;
-        }
-
         .special-crown {
             position: absolute;
-            top: -15px;
+            top: -12px;
             right: 20px;
             background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
             color: var(--burgundy);
-            padding: 10px 25px;
-            font-size: 0.9rem;
+            padding: 6px 16px;
+            font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 2px;
-            border-radius: 20px;
+            letter-spacing: 1.5px;
+            border-radius: 15px;
             text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
             z-index: 2;
         }
 
@@ -809,8 +1008,8 @@ nav {
 
         .royal-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
             perspective: 1000px;
         }
 
@@ -819,7 +1018,7 @@ nav {
                 rgba(26, 22, 18, 0.8) 0%, 
                 rgba(44, 24, 16, 0.8) 100%);
             border-radius: 20px;
-            padding: 50px 40px;
+            padding: 35px 30px;
             text-align: center;
             border: 1px solid rgba(245, 197, 66, 0.2);
             transition: var(--transition);
@@ -856,11 +1055,11 @@ nav {
         }
 
         .service-icon {
-            font-size: 4rem;
+            font-size: 3.2rem;
             color: var(--royal-gold);
-            margin-bottom: 30px;
+            margin-bottom: 22px;
             display: inline-block;
-            padding: 25px;
+            padding: 18px;
             background: linear-gradient(135deg, rgba(245, 197, 66, 0.1), rgba(100, 27, 46, 0.1));
             border-radius: 50%;
             border: 2px solid rgba(245, 197, 66, 0.3);
@@ -874,17 +1073,157 @@ nav {
         }
 
         .royal-service-card h3 {
-            font-size: 2rem;
+            font-size: 1.7rem;
             color: var(--royal-gold);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: 'Cinzel', serif;
         }
 
         .royal-service-card p {
             color: var(--cream);
-            font-size: 1.2rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.6;
             opacity: 0.9;
+        }
+
+        /* Map Section - Replaces Gallery */
+        .map-section {
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(245, 197, 66, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, rgba(100, 27, 46, 0.1) 0%, transparent 30%),
+                linear-gradient(to bottom, rgba(10, 8, 6, 0.95), rgba(26, 22, 18, 0.98));
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 3px solid var(--royal-gold);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--glow), var(--royal-shadow);
+            transition: var(--transition);
+        }
+
+        .map-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(245, 197, 66, 0.5), var(--royal-shadow);
+            border-color: var(--light-gold);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            display: block;
+            filter: grayscale(20%) sepia(10%) hue-rotate(320deg);
+            transition: var(--transition);
+        }
+
+        .map-container:hover iframe {
+            filter: grayscale(0%) sepia(0%) hue-rotate(0deg);
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, rgba(26, 22, 18, 0.9), rgba(44, 24, 16, 0.9));
+            padding: 20px 30px;
+            border-radius: 15px;
+            border: 1px solid var(--royal-gold);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+            max-width: 300px;
+            animation: mapOverlayPulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes mapOverlayPulse {
+            from { box-shadow: 0 0 20px rgba(245, 197, 66, 0.2); }
+            to { box-shadow: 0 0 30px rgba(245, 197, 66, 0.4); }
+        }
+
+        .map-overlay h3 {
+            font-size: 1.8rem;
+            color: var(--royal-gold);
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .map-overlay p {
+            color: var(--cream);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .map-overlay .royal-address {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light-gold);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .map-overlay .royal-address i {
+            color: var(--royal-gold);
+            font-size: 1.2rem;
+        }
+
+        .map-directions-btn {
+            background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
+            color: var(--burgundy);
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-directions-btn:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--royal-gold), var(--light-gold), var(--royal-gold));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .map-directions-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 30px rgba(245, 197, 66, 0.5);
+        }
+
+        .map-directions-btn:hover:before {
+            opacity: 1;
         }
 
         /* Contact Section */
@@ -897,7 +1236,7 @@ nav {
         .royal-contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
+            gap: 35px;
         }
 
         .royal-contact-item {
@@ -905,7 +1244,7 @@ nav {
                 rgba(26, 22, 18, 0.7) 0%, 
                 rgba(44, 24, 16, 0.7) 100%);
             border-radius: 20px;
-            padding: 50px 40px;
+            padding: 35px 30px;
             text-align: center;
             border: 1px solid rgba(245, 197, 66, 0.2);
             transition: var(--transition);
@@ -923,33 +1262,33 @@ nav {
         }
 
         .contact-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--royal-gold);
-            margin-bottom: 30px;
+            margin-bottom: 22px;
             display: inline-block;
-            padding: 20px;
+            padding: 16px;
             background: linear-gradient(135deg, rgba(245, 197, 66, 0.1), rgba(100, 27, 46, 0.1));
             border-radius: 50%;
         }
 
         .royal-contact-item h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--royal-gold);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: 'Cinzel', serif;
         }
 
         .royal-contact-item p {
             color: var(--cream);
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.6;
             opacity: 0.9;
         }
 
         /* Royal Footer */
         footer {
             background: linear-gradient(180deg, rgba(10, 8, 6, 0.95) 0%, rgba(26, 22, 18, 1) 100%);
-            padding: 100px 0 50px;
+            padding: 80px 0 40px;
             position: relative;
             border-top: 1px solid rgba(245, 197, 66, 0.2);
         }
@@ -966,9 +1305,9 @@ nav {
 
         .royal-footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
         .royal-footer-logo {
@@ -978,44 +1317,52 @@ nav {
         }
 
         .footer-logo-img {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--burgundy);
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border: 2px solid var(--royal-gold);
             box-shadow: var(--glow);
+            overflow: hidden;
+        }
+
+        .footer-logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .royal-tagline {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--light-gold);
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             line-height: 1.3;
         }
 
         .royal-footer-text {
             color: var(--cream);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.9;
-            max-width: 400px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.85;
+            max-width: 350px;
         }
 
         .royal-footer-links h4 {
             color: var(--royal-gold);
-            font-size: 1.6rem;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
             font-family: 'Cinzel', serif;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .royal-footer-links h4:after {
@@ -1023,7 +1370,7 @@ nav {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 2px;
             background: linear-gradient(90deg, var(--royal-gold), transparent);
         }
@@ -1033,47 +1380,48 @@ nav {
         }
 
         .royal-footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .royal-footer-links a {
             color: var(--cream);
             text-decoration: none;
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .royal-footer-links a:hover {
             color: var(--royal-gold);
-            padding-left: 10px;
+            padding-left: 8px;
         }
 
         .royal-footer-links a i {
             color: var(--royal-gold);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .royal-social-icons {
             display: flex;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .royal-social-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, rgba(245, 197, 66, 0.1), rgba(100, 27, 46, 0.1));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--royal-gold);
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             transition: var(--transition);
             border: 1px solid rgba(245, 197, 66, 0.3);
+            text-decoration: none;
         }
 
         .royal-social-icon:hover {
@@ -1085,11 +1433,16 @@ nav {
 
         .royal-copyright {
             text-align: center;
-            padding-top: 50px;
+            padding-top: 40px;
             border-top: 1px solid rgba(245, 197, 66, 0.1);
             color: var(--cream);
-            font-size: 1rem;
-            opacity: 0.7;
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        .royal-copyright p {
+            margin: 0;
+            line-height: 1.6;
         }
 
         /* Responsive Design */
@@ -1111,9 +1464,41 @@ nav {
             .category-title {
                 font-size: 2.5rem;
             }
+            
+            .map-container iframe {
+                height: 450px;
+            }
         }
 
         @media (max-width: 992px) {
+            header {
+                padding: 12px 0;
+            }
+            
+            .header-container {
+                padding: 0 20px;
+                gap: 15px;
+                justify-content: flex-start;
+            }
+            
+            .logo-container {
+                gap: 15px;
+            }
+            
+            .logo-img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-text {
+                font-size: 1.4rem;
+                letter-spacing: 1.5px;
+            }
+            
+            .logo-subtext {
+                font-size: 0.9rem;
+            }
+            
             .nav-links {
                 display: none;
                 position: absolute;
@@ -1122,8 +1507,8 @@ nav {
                 width: 100%;
                 background: linear-gradient(180deg, rgba(26, 22, 18, 0.98) 0%, rgba(10, 8, 6, 0.95) 100%);
                 flex-direction: column;
-                padding: 40px;
-                gap: 30px;
+                padding: 30px 20px;
+                gap: 15px;
                 border-top: 1px solid rgba(245, 197, 66, 0.2);
                 z-index: 1000;
                 backdrop-filter: blur(20px);
@@ -1133,16 +1518,46 @@ nav {
                 display: flex;
             }
             
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 12px 15px;
+                border-bottom: 1px solid rgba(245, 197, 66, 0.15);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
             .mobile-menu-btn {
                 display: block;
+                background: none;
+                border: none;
+                color: var(--royal-gold);
+                font-size: 1.8rem;
+                cursor: pointer;
+                padding: 8px;
+                transition: var(--transition);
+            }
+            
+            .mobile-menu-btn:hover {
+                transform: scale(1.1);
+            }
+            
+            .royal-phone {
+                padding: 8px 15px;
+                font-size: 0.9rem;
             }
             
             .royal-phone span {
                 display: none;
             }
             
+            .royal-phone i {
+                font-size: 1.3rem;
+            }
+            
             .hero {
-                margin-top: 100px;
+                margin-top: 90px;
             }
             
             .hero h1 {
@@ -1155,28 +1570,166 @@ nav {
             
             .royal-menu-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .royal-menu-item {
+                padding: 20px;
+            }
+            
+            .item-name {
+                font-size: 1.3rem;
+            }
+            
+            .item-price {
+                font-size: 1.4rem;
+            }
+            
+            .item-desc {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+            }
+            
+            .map-container iframe {
+                height: 400px;
+            }
+            
+            .map-overlay {
+                position: relative;
+                top: 0;
+                left: 0;
+                max-width: 100%;
+                border-radius: 15px 15px 0 0;
             }
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+                gap: 10px;
+                justify-content: flex-start;
+            }
+            
+            .logo-container {
+                gap: 12px;
+            }
+            
+            .logo-img {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+                letter-spacing: 1.2px;
+            }
+            
+            .logo-subtext {
+                font-size: 0.85rem;
+                margin-top: 2px;
+            }
+            
+            .mobile-menu-btn {
+                font-size: 1.6rem;
+                padding: 6px;
+            }
+            
+            .royal-phone i {
+                font-size: 1.2rem;
+            }
+            
             .container {
                 padding: 0 20px;
             }
             
+            .hero {
+                height: 80vh;
+                margin-top: 85px;
+                background-attachment: scroll;
+            }
+            
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
+                margin-bottom: 20px;
+                letter-spacing: 2px;
             }
             
             .hero .script-font {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
+                margin-bottom: 20px;
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                margin-bottom: 35px;
+                max-width: 90%;
+            }
+            
+            .royal-cta {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+                letter-spacing: 1.5px;
             }
             
             .section {
                 padding: 80px 0;
+            }
+            
+            .menu-nav-container {
+                gap: 8px;
+                margin: 40px 0;
+            }
+            
+            .menu-nav-btn {
+                padding: 10px 14px;
+                font-size: 0.75rem;
+                gap: 6px;
+            }
+            
+            .menu-nav-btn i {
+                font-size: 0.9rem;
+            }
+            
+            .royal-menu-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .royal-menu-item {
+                padding: 16px;
+                border-radius: 12px;
+            }
+            
+            .item-header {
+                margin-bottom: 12px;
+            }
+            
+            .item-name {
+                font-size: 1.1rem;
+            }
+            
+            .item-price {
+                font-size: 1.2rem;
+            }
+            
+            .item-desc {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+                line-height: 1.5;
+            }
+            
+            .item-details {
+                gap: 8px;
+                margin-top: 8px;
+            }
+            
+            .royal-tag {
+                padding: 5px 12px;
+                font-size: 0.75rem;
             }
             
             .section-title h2 {
@@ -1208,281 +1761,742 @@ nav {
             .royal-menu-item {
                 padding: 30px 25px;
             }
+            
+            .map-section {
+                padding: 80px 0;
+            }
+            
+            .map-container iframe {
+                height: 350px;
+            }
+            
+            .map-overlay {
+                padding: 15px 20px;
+            }
+            
+            .map-overlay h3 {
+                font-size: 1.5rem;
+            }
+            
+            .map-directions-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ULTRA-SMALL PHONES (320px - 480px) */
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .logo-subtext {
+                font-size: 0.7rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero .script-font {
+                font-size: 1.4rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-title p {
+                font-size: 0.95rem;
+            }
+
+            .menu-nav-btn {
+                padding: 6px 10px;
+                font-size: 0.65rem;
+            }
+
+            .category-title {
+                font-size: 1.3rem;
+            }
+
+            .item-name {
+                font-size: 0.85rem;
+            }
+
+            .item-price {
+                font-size: 0.8rem;
+            }
+
+            .royal-service-card h3,
+            .royal-contact-item h3 {
+                font-size: 1rem;
+            }
+
+            .royal-footer-text {
+                font-size: 0.8rem;
+            }
+
+            .royal-footer-links h4 {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 40px 12px 25px;
+            }
+
+            .section {
+                padding: 40px 12px;
+            }
+            
+            .map-section {
+                padding: 40px 12px;
+            }
+            
+            .map-container iframe {
+                height: 250px;
+            }
+            
+            .map-overlay {
+                padding: 12px 15px;
+            }
+            
+            .map-overlay h3 {
+                font-size: 1.2rem;
+            }
+            
+            .map-overlay p {
+                font-size: 0.85rem;
+            }
+            
+            .map-overlay .royal-address {
+                font-size: 0.9rem;
+            }
+            
+            .map-directions-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
         }
 
         @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            /* HEADER MOBILE */
+            header {
+                padding: 8px 0;
             }
             
-            .hero .script-font {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .royal-services-grid,
-            .royal-contact-grid {
-                grid-template-columns: 1fr;
+            .header-container {
+                padding: 0 12px;
+                gap: 8px;
+                justify-content: space-between;
             }
             
             .logo-img {
-                width: 60px;
-                height: 60px;
+                width: 48px;
+                height: 48px;
+                border-width: 2px;
+                font-size: 1.2rem;
+            }
+            
+            .logo-text {
+                font-size: 1.1rem;
+                letter-spacing: 0.8px;
+            }
+            
+            .logo-subtext {
+                font-size: 0.75rem;
+                margin-top: 2px;
+            }
+            
+            .mobile-menu-btn {
+                font-size: 1.6rem;
+                padding: 5px;
+                margin-right: 8px;
+            }
+            
+            .royal-phone {
+                padding: 6px 10px;
+                gap: 6px;
+                font-size: 0.8rem;
+            }
+            
+            .royal-phone i {
+                font-size: 1rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+            
+            /* HERO SECTION MOBILE */
+            .hero {
+                height: 100vh;
+                margin-top: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-attachment: scroll;
+                background: 
+                    linear-gradient(to bottom, transparent 0%, rgba(10, 8, 6, 0.7) 40%, rgba(10, 8, 6, 0.95) 100%),
+                    url('https://media.istockphoto.com/id/995903748/photo/smoked-and-spicy-tandoori-chicken-grilling-with-smoke.jpg?s=612x612&w=0&k=20&c=xq_apF2Osk5HYFOgBS9crRi1puLozxyGWFuCUV0mhYg=') top right / 15% auto no-repeat,
+                    linear-gradient(to bottom, rgba(10, 8, 6, 0.85), rgba(10, 8, 6, 0.95));
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                padding: 15px 12px;
+                text-align: center;
+                z-index: 2;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                margin-bottom: 12px;
+                letter-spacing: 1px;
+                line-height: 1.2;
+                text-shadow: 0 0 15px rgba(245, 197, 66, 0.4), 2px 2px 3px rgba(0, 0, 0, 0.8);
+            }
+            
+            .hero .script-font {
+                font-size: 1.6rem;
+                margin-bottom: 12px;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                color: var(--light-gold);
+                margin-bottom: 25px;
+                line-height: 1.5;
+                padding: 0 5px;
+            }
+            
+            .royal-cta {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+            
+            /* SECTIONS MOBILE */
+            .section {
+                padding: 50px 15px;
+            }
+            
+            .section-title h2 {
                 font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+            
+            .section-title p {
+                font-size: 1.1rem;
+                margin-top: 10px;
+            }
+            
+            /* MAP SECTION MOBILE */
+            .map-section {
+                padding: 50px 15px;
+            }
+            
+            .map-container {
+                border-width: 2px;
+            }
+            
+            .map-container iframe {
+                height: 300px;
+            }
+            
+            .map-overlay {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border-radius: 15px 15px 0 0;
+                padding: 15px;
+            }
+            
+            .map-overlay h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* MENU NAVIGATION MOBILE */
+            .menu-nav-container {
+                padding: 20px 10px;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            
+            .menu-nav-btn {
+                padding: 8px 12px;
+                font-size: 0.7rem;
+                gap: 5px;
+                border-radius: 20px;
+                letter-spacing: 0.5px;
+            }
+            
+            .menu-nav-btn i {
+                font-size: 0.8rem;
+            }
+            
+            /* MENU ITEMS MOBILE */
+            .royal-menu-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .category-header {
+                gap: 20px;
+                margin-bottom: 35px;
+                flex-direction: column;
+            }
+            
+            .category-info {
+                text-align: center;
+            }
+            
+            .category-title {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+            
+            .category-desc {
+                font-size: 0.85rem;
+            }
+            
+            .royal-menu-item {
+                padding: 12px 10px;
+                border-radius: 8px;
+            }
+            
+            .item-header {
+                margin-bottom: 6px;
+                gap: 6px;
+            }
+            
+            .item-name {
+                font-size: 0.95rem;
+                line-height: 1.2;
+            }
+            
+            .item-price {
+                font-size: 0.9rem;
+            }
+            
+            .item-desc {
+                font-size: 0.75rem;
+                margin-bottom: 5px;
+                line-height: 1.3;
+            }
+            
+            .item-details {
+                gap: 5px;
+                margin-top: 5px;
+            }
+            
+            .royal-tag {
+                padding: 3px 8px;
+                font-size: 0.6rem;
+                border-radius: 10px;
+            }
+            
+            /* SERVICES & CONTACT MOBILE */
+            .royal-services-grid,
+            .royal-contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .royal-service-card,
+            .royal-contact-item {
+                padding: 25px 20px;
+            }
+            
+            .service-icon,
+            .contact-icon {
+                font-size: 2.5rem;
+                padding: 12px;
+            }
+            
+            .royal-service-card h3,
+            .royal-contact-item h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* FOOTER MOBILE */
+            .royal-footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .royal-footer-logo {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .royal-footer-links h4:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .royal-footer-links ul {
+                text-align: center;
+            }
+            
+            .royal-footer-links a {
+                justify-content: center;
+            }
+            
+            .royal-social-icons {
+                justify-content: center;
             }
         }
+      /*royal coner decoration*/
+      .royal-corner {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 1;
+}
 
-        /* Royal Decorative Elements */
-        .royal-corner {
-            position: fixed;
-            width: 100px;
-            height: 100px;
-            pointer-events: none;
-            z-index: 1;
-        }
+.corner-tl {
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--royal-gold);
+    border-left: 2px solid var(--royal-gold);
+}
 
-        .corner-tl {
-            top: 0;
-            left: 0;
-            border-top: 2px solid var(--royal-gold);
-            border-left: 2px solid var(--royal-gold);
-        }
+.corner-tr {
+    top: 0;
+    right: 0;
+    border-top: 2px solid var(--royal-gold);
+    border-right: 2px solid var(--royal-gold);
+}
 
-        .corner-tr {
-            top: 0;
-            right: 0;
-            border-top: 2px solid var(--royal-gold);
-            border-right: 2px solid var(--royal-gold);
-        }
+.corner-bl {
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid var(--royal-gold);
+    border-left: 2px solid var(--royal-gold);
+}
 
-        .corner-bl {
-            bottom: 0;
-            left: 0;
-            border-bottom: 2px solid var(--royal-gold);
-            border-left: 2px solid var(--royal-gold);
-        }
+.corner-br {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--royal-gold);
+    border-right: 2px solid var(--royal-gold);
+}  /* xv*/
+      /* Hero Section Specific Styles */
+.hero-left {
+    animation: slideInLeft 1s ease;
+}
 
-        .corner-br {
-            bottom: 0;
-            right: 0;
-            border-bottom: 2px solid var(--royal-gold);
-            border-right: 2px solid var(--royal-gold);
-        }
+.hero-right {
+    animation: slideInRight 1s ease;
+}
 
-        /* Star Effect */
-        .star {
-            position: fixed;
-            background-color: var(--royal-gold);
-            border-radius: 50%;
-            animation: twinkle 4s infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.2); }
-        }/* ================================================= */
-/* PHONE-ONLY NAVBAR & MENU RE-ORGANIZATION (PREMIUM) */
-/* ================================================= */
-
-@media (max-width: 768px) {
-
-    /* ---------- TOP NAVBAR LAYOUT FIX ---------- */
-    .header-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
     }
-
-    nav {
-        flex: unset;
-        justify-content: flex-end;
-    }
-
-    /* MENU ICON + PHONE ICON SIDE BY SIDE */
-    .mobile-menu-btn {
-        margin-right: 15px;
-        font-size: 1.8rem;
-        transition: transform 0.3s ease;
-    }
-
-    .mobile-menu-btn:active {
-        transform: scale(0.9);
-    }
-
-    .royal-phone {
-        padding: 10px 16px;
-        gap: 8px;
-        border-radius: 40px;
-    }
-
-    .royal-phone i {
-        font-size: 1.2rem;
-    }
-
-    /* ---------- MOBILE MENU CONTAINER ---------- */
-    .nav-links {
-        padding: 20px;
-        gap: 0;
-        border-radius: 0 0 20px 20px;
-        animation: mobileMenuDrop 0.45s ease forwards;
-    }
-
-    @keyframes mobileMenuDrop {
-        from {
-            opacity: 0;
-            transform: translateY(-15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* ---------- TABLE-LIKE MENU ITEMS ---------- */
-    .nav-links a {
-        font-size: 0.95rem;
-        padding: 14px 12px;
-        border-bottom: 1px solid rgba(245, 197, 66, 0.15);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-        animation: menuRowFade 0.4s ease forwards;
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
-    @keyframes menuRowFade {
-        from {
-            opacity: 0;
-            transform: translateX(-12px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    /* RIGHT ARROW INDICATOR (APP FEEL) */
-    .nav-links a:after {
-        content: '›';
-        font-size: 1.4rem;
-        color: var(--royal-gold);
-        opacity: 0.6;
-        transform: translateX(-5px);
-        transition: var(--transition);
-    }
-
-    .nav-links a:active:after {
-        transform: translateX(0);
+    to {
         opacity: 1;
-    }
-
-    /* ---------- TAP FEEDBACK ---------- */
-    .nav-links a:active {
-        background: rgba(245, 197, 66, 0.08);
-        transform: scale(0.98);
-    }
-
-    /* ---------- HERO TEXT SIZE CONTROL ---------- */
-    .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    /* ---------- MENU CARDS COMPACT ---------- */
-    .royal-menu-item {
-        padding: 24px 22px;
-    }
-
-    .item-name {
-        font-size: 1.4rem;
-    }
-
-    .item-price {
-        font-size: 1.6rem;
-    }
-
-    /* ---------- CATEGORY HEADER IMAGE CONTROL ---------- */
-    .category-image {
-        width: 45%;
-        opacity: 0.8;
-    }
-
-    /* ---------- SMOOTH PAGE FEEL ---------- */
-    body {
-        scroll-behavior: smooth;
+        transform: translateX(0);
     }
 }
 
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive for mobile */
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column !important;
+        padding: 50px 30px !important;
+    }
+    
+    .hero-left {
+        max-width: 100% !important;
+        padding-right: 0 !important;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    
+    .hero-left .welcome-wrapper,
+    .hero-left h1,
+    .hero-left .royal-subtitle,
+    .hero-left p {
+        text-align: center !important;
+    }
+    
+    .hero-left .royal-divider {
+        justify-content: center !important;
+    }
+    
+    .hero-left .big-logo-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hero-left div[style*="display: flex"] {
+        justify-content: center;
+    }
+} /* Hero Section Animation */
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 40px rgba(245, 197, 66, 0.6);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 70px rgba(245, 197, 66, 0.9);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-left {
+    animation: slideInLeft 1s ease;
+}
+
+.hero-right {
+    animation: slideInRight 1s ease;
+}
+
+/* Responsive for mobile */
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column !important;
+        padding: 50px 30px !important;
+    }
+    
+    .hero-left {
+        max-width: 100% !important;
+        padding-right: 0 !important;
+        margin-bottom: 60px;
+    }
+    
+    .hero-right {
+        padding-left: 0 !important;
+        margin-top: 30px;
+    }
+    
+    .hero-left,
+    .hero-left .welcome-wrapper,
+    .hero-left h1,
+    .hero-left .royal-subtitle,
+    .hero-left p {
+        text-align: center !important;
+    }
+    
+    .hero-left .royal-divider {
+        justify-content: center !important;
+    }
+    
+    .hero-left div[style*="display: flex"] {
+        justify-content: center;
+    }
+    
+    .big-logo-wrapper img {
+        width: 250px !important;
+        height: 250px !important;
+    }
+}
     </style>
 </head>
 <body>
-    <!-- Royal Corner Decorations -->
-    <div class="royal-corner corner-tl"></div>
-    <div class="royal-corner corner-tr"></div>
-    <div class="royal-corner corner-bl"></div>
-    <div class="royal-corner corner-br"></div>
-
-    <!-- Header -->
     <header>
-        <div class="container header-container">
-             <div class="logo-container">
-                <div class="logo-img"><img src="logo.ico" alt="Logo"></div>
+   
+      
+      
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo-img">
+            <img src="logo.ico" alt="Shahi Qila Logo">                </div>
                 <div>
-                    <div class="logo-text">SHAHI QILA</div>
-                    <div class="logo-subtext">Since 1985</div>
+                    <div class="logo-text">Shahi Qila</div>
+                    <div class="logo-subtext">The Royal Kitchen</div>
                 </div>
             </div>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-crown"></i>
-            </button>
-            
             <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Royal Entrance</a></li>
-                    <li><a href="#menu">Royal Feast</a></li>
-                    <li><a href="#services">Royal Services</a></li>
-                    <li><a href="#contact">Royal Contact</a></li>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             
             <div class="royal-phone">
-                <i class="fas fa-phone"></i>
-                <span>0330-6863355</span>
+                <i class="fas fa-phone-alt"></i>
+                <span>+92 42 1234 5678</span>
             </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="logo-real">
-           <img src="logo.png" alt="Logo">
-               </div>
-        <div class="container hero-content">
-            <span class="script-font">Welcome to</span>
-            <h1>THE ROYAL CULINARY PALACE</h1>
-            <span class="script-font">of Lahore</span>
-            <p>Where every meal is a celebration of centuries-old recipes, crafted with royal precision and served in an ambiance worthy of kings. Experience the legacy of Mughal cuisine reimagined for the modern connoisseur.</p>
-            <button class="royal-cta" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">
-                Discover Our Royal Feast
-            </button>
-        </div>
-    </section>
-
+    <main>
+        <!-- Hero Section -->
+                       <!-- Hero Section - Content + Image on LEFT, BIG LOGO on RIGHT -->
+        <section id="home" class="hero" style="background: linear-gradient(135deg, rgba(10,8,6,0.98) 0%, rgba(26,22,18,0.95) 100%); margin-top: 95px; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;">
+            
+            <!-- Decorative corner elements -->
+            <div style="position: absolute; top: 20px; left: 20px; width: 150px; height: 150px; border-top: 2px solid var(--royal-gold); border-left: 2px solid var(--royal-gold); opacity: 0.3;"></div>
+            <div style="position: absolute; bottom: 20px; right: 20px; width: 150px; height: 150px; border-bottom: 2px solid var(--royal-gold); border-right: 2px solid var(--royal-gold); opacity: 0.3;"></div>
+            
+            <div class="container" style="display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 0 50px; width: 100%; flex-direction: row-reverse;">
+                
+                <!-- RIGHT SIDE - BIG LOGO Only -->
+                <div class="hero-right" style="flex: 1; display: flex; justify-content: center; align-items: center; padding-left: 60px;">
+                    
+                    <!-- BIG LOGO with royal styling -->
+                    <div class="big-logo-wrapper" style="position: relative;">
+                        <!-- Main Logo -->
+                        <img src="logo.ico" alt="Shahi Qila Royal Logo" style="width: 350px; height: 350px; object-fit: contain; filter: drop-shadow(0 0 40px rgba(245, 197, 66, 0.6)); border-radius: 50%; border: 6px solid var(--royal-gold); padding: 20px; background: linear-gradient(135deg, rgba(245,197,66,0.15), rgba(212,160,23,0.15)); animation: logoPulse 3s ease-in-out infinite;">
+                        
+                        <!-- Decorative Crown Above Logo -->
+                        <i class="fas fa-crown" style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); color: var(--royal-gold); font-size: 3rem; filter: drop-shadow(0 0 20px gold);"></i>
+                        
+                        <!-- Floating Stars Around Logo -->
+                        <i class="fas fa-star" style="position: absolute; top: 20px; right: 20px; color: var(--royal-gold); font-size: 1.5rem; opacity: 0.6;"></i>
+                        <i class="fas fa-star" style="position: absolute; bottom: 20px; left: 20px; color: var(--royal-gold); font-size: 1.2rem; opacity: 0.4;"></i>
+                        
+                        <!-- Royal Text Below Logo -->
+                        <div style="position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center;">
+                            <span style="font-family: 'Great Vibes', cursive; color: var(--light-gold); font-size: 2rem; display: block;">Royal Emblem</span>
+                            <span style="color: var(--royal-gold); font-size: 0.9rem; letter-spacing: 5px;">EST. 1985</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- LEFT SIDE - All Content + Food Image -->
+                <div class="hero-left" style="flex: 1; padding-right: 60px; max-width: 650px;">
+                    
+                    <!-- Welcome Text -->
+                    <div class="welcome-wrapper" style="text-align: left;">
+                        <span class="script-font" style="font-size: 2.5rem; color: var(--light-gold); display: block; line-height: 1.2;">Welcome to the</span>
+                        <div class="royal-divider" style="justify-content: flex-start; margin: 10px 0 20px;">
+                            <span class="divider-line" style="width: 80px; height: 2px; background: linear-gradient(90deg, var(--royal-gold), transparent);"></span>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Main Title - SHAHI QILA -->
+                    <h1 style="font-family: 'Cinzel', serif; text-align: left; margin-bottom: 15px;">
+                        <span style="display: block; font-size: 5rem; font-weight: 800; color: var(--royal-gold); line-height: 1.1; text-shadow: 3px 3px 6px rgba(0,0,0,0.5);">SHAHI</span>
+                        <span style="display: block; font-size: 5.5rem; font-weight: 800; background: linear-gradient(45deg, var(--royal-gold), #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.1;">QILA</span>
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <div class="royal-subtitle" style="text-align: left; margin-bottom: 20px;">
+                        <span class="script-font" style="font-size: 2rem; color: var(--light-gold); display: block;">The Royal Culinary Palace</span>
+                        <span style="font-size: 1.2rem; color: rgba(245, 197, 66, 0.8); font-style: italic; display: block;">of Lahore • Since 1985</span>
+                    </div>
+                    
+                    <!-- FOOD IMAGE - SMALLER, on LEFT side with content -->
+                    <div style="display: flex; gap: 25px; margin: 25px 0; align-items: center; flex-wrap: wrap;">
+                        <!-- Small Food Image -->
+                        <div style="position: relative; width: 200px; flex-shrink: 0;">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/067/174/805/small/juicy-biryani-chicken-leg-image-with-flavorful-rice-on-plate-free-photo.jpg" alt="Royal Dish" style="width: 100%; height: 130px; object-fit: cover; border-radius: 15px; border: 3px solid var(--royal-gold); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                            <div style="position: absolute; top: -8px; right: -8px; background: var(--royal-gold); color: var(--burgundy); padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold;">SIGNATURE</div>
+                        </div>
+                        
+                        <!-- Description text next to image -->
+                        <p style="font-size: 1rem; color: var(--cream); line-height: 1.6; flex: 1; margin: 0;">
+                            Experience the authentic taste of Lahore's Royal Cuisine in a regal ambiance fit for kings.
+                        </p>
+                    </div>
+                    
+                    <!-- Features as badges -->
+                    <div style="display: flex; gap: 12px; margin: 25px 0; flex-wrap: wrap;">
+                        <span style="background: rgba(245, 197, 66, 0.15); padding: 8px 18px; border-radius: 30px; border: 1px solid rgba(245, 197, 66, 0.3); color: var(--light-gold); display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                            <i class="fas fa-utensils" style="color: var(--royal-gold);"></i> Mughal Cuisine
+                        </span>
+                        <span style="background: rgba(245, 197, 66, 0.15); padding: 8px 18px; border-radius: 30px; border: 1px solid rgba(245, 197, 66, 0.3); color: var(--light-gold); display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                            <i class="fas fa-crown" style="color: var(--royal-gold);"></i> Royal Ambiance
+                        </span>
+                        <span style="background: rgba(245, 197, 66, 0.15); padding: 8px 18px; border-radius: 30px; border: 1px solid rgba(245, 197, 66, 0.3); color: var(--light-gold); display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                            <i class="fas fa-star" style="color: var(--royal-gold);"></i> Since 1985
+                        </span>
+                    </div>
+                    
+                    <!-- Full Description -->
+                    <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; margin: 20px 0; text-align: left;">
+                        Every meal is a celebration of centuries-old recipes, crafted with royal precision for the modern connoisseur. From our tandoor to your table, experience the legacy of Mughal flavors.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div style="display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+                        <button class="royal-cta" style="background: linear-gradient(135deg, var(--royal-gold), var(--deep-gold)); color: var(--burgundy); border: none; padding: 15px 35px; font-size: 1rem; font-weight: 700; border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 30px rgba(245,197,66,0.3);" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">
+                            <span>Explore Menu</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <a href="#location" style="background: transparent; color: var(--light-gold); border: 2px solid rgba(245, 197, 66, 0.3); padding: 13px 30px; font-size: 1rem; border-radius: 50px; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: var(--transition);">
+                            <i class="fas fa-map-marker-alt" style="color: var(--royal-gold);"></i>
+                            Find Us
+                        </a>
+                    </div>
+                    
+                    <!-- Contact quick info -->
+                    <div style="display: flex; gap: 25px; margin-top: 30px;">
+                        <a href="tel:03306863355" style="color: var(--light-gold); text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                            <i class="fas fa-phone-alt" style="color: var(--royal-gold);"></i>
+                            <span>0330-6863355</span>
+                        </a>
+                        <span style="color: var(--light-gold); display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                            <i class="fas fa-clock" style="color: var(--royal-gold);"></i>
+                            <span>12PM - 12AM Daily</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <span style="font-size: 0.8rem; color: var(--light-gold); letter-spacing: 2px; writing-mode: vertical-rl; transform: rotate(180deg);">DISCOVER</span>
+                <div style="width: 45px; height: 45px; border: 2px solid rgba(245,197,66,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--royal-gold); animation: bounce 2s infinite;">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+       
     <!-- Menu Section -->
     <!-- Menu Section -->
 <section class="section" id="menu">
@@ -1492,8 +2506,45 @@ nav {
             <p class="script-font" style="font-size: 2rem; margin-top: 20px;">A Culinary Journey Through Royal Recipes</p>
         </div>
         
+        <!-- Category Navigation Menu -->
+        <div class="menu-nav-container">
+            <button class="menu-nav-btn active" data-category="starters">
+                <i class="fas fa-crown"></i> Starters
+            </button>
+            <button class="menu-nav-btn" data-category="handi">
+                <i class="fas fa-mortar-pestle"></i> Handi & Karahi
+            </button>
+            <button class="menu-nav-btn" data-category="bbq">
+                <i class="fas fa-utensil-spoon"></i> B.B.Q Platters
+            </button>
+            <button class="menu-nav-btn" data-category="chinese">
+                <i class="fas fa-utensils"></i> Chinese
+            </button>
+            <button class="menu-nav-btn" data-category="tandoor">
+                <i class="fas fa-fire"></i> Tandoor
+            </button>
+            <button class="menu-nav-btn" data-category="burgers">
+                <i class="fas fa-hamburger"></i> Burgers
+            </button>
+            <button class="menu-nav-btn" data-category="wraps">
+                <i class="fas fa-burrito"></i> Wraps
+            </button>
+            <button class="menu-nav-btn" data-category="pizza">
+                <i class="fas fa-pizza-slice"></i> Pizza
+            </button>
+            <button class="menu-nav-btn" data-category="sandwich">
+                <i class="fas fa-sandwich"></i> Sandwich & Pasta
+            </button>
+            <button class="menu-nav-btn" data-category="desserts">
+                <i class="fas fa-cake-candles"></i> Desserts
+            </button>
+            <button class="menu-nav-btn" data-category="beverages">
+                <i class="fas fa-glass-cheers"></i> Beverages
+            </button>
+        </div>
+        
         <!-- STARTERS - Royal Appetizers -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="starters">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-crown"></i>
@@ -1605,7 +2656,7 @@ nav {
         </div>
         
         <!-- TRADITIONAL HANDI & KARAHI -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="handi">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-mortar-pestle"></i>
@@ -1686,7 +2737,7 @@ nav {
         </div>
         
         <!-- B.B.Q PLATTERS -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="bbq">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-utensil-spoon"></i>
@@ -1720,7 +2771,7 @@ nav {
         </div>
         
         <!-- CHINESE -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="chinese">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-utensils"></i>
@@ -1779,7 +2830,7 @@ nav {
         </div>
         
         <!-- TANDOOR -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="tandoor">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-fire"></i>
@@ -1846,7 +2897,7 @@ nav {
         </div>
         
         <!-- BURGERS -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="burgers">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-hamburger"></i>
@@ -1899,7 +2950,7 @@ nav {
         </div>
         
         <!-- WRAPS -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="wraps">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-burrito"></i>
@@ -1929,7 +2980,7 @@ nav {
         </div>
         
         <!-- PIZZA -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="pizza">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-pizza-slice"></i>
@@ -1982,7 +3033,7 @@ nav {
         </div>
         
         <!-- SANDWICH & PASTA -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="sandwich">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-bread-slice"></i>
@@ -2049,7 +3100,7 @@ nav {
         </div>
         
         <!-- DESSERTS -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="desserts">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-ice-cream"></i>
@@ -2138,7 +3189,7 @@ nav {
         </div>
         
         <!-- BEVERAGES -->
-        <div class="royal-category">
+        <div class="royal-category" data-category="beverages">
             <div class="category-header">
                 <div class="category-icon">
                     <i class="fas fa-glass-cheers"></i>
@@ -2220,277 +3271,397 @@ nav {
         
     </div>
 </section>
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>ROYAL SERVICES</h2>
-                <p class="script-font" style="font-size: 2rem; margin-top: 20px;">Experience Royal Treatment</p>
+        <!-- Map Section - Replaces Gallery -->
+        <section id="location" class="map-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Location</h2>
+                    <p class="script-font" style="font-size: 1.8rem; margin-top: 10px;">Find the Royal Palace</p>
+                </div>
+                
+                <div class="map-container">
+                    <div class="map-overlay">
+                        <h3>Shahi Qila Restaurant</h3>
+                        <div class="royal-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Food Street, Gawalmandi, Lahore</span>
+                        </div>
+                        <div class="royal-address">
+                            <i class="fas fa-clock"></i>
+                            <span>Open Daily: 12:00 PM - 12:00 AM</span>
+                        </div>
+                        <div class="royal-address">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+92 42 1234 5678</span>
+                        </div>
+                        <button class="map-directions-btn" onclick="window.open('https://maps.google.com/?q=Food+Street+Gawalmandi+Lahore', '_blank')">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </button>
+                    </div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.684673567277!2d74.306874!3d31.573978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191c7a6c6c6c6d%3A0x9c6c6c6c6c6c6c6c!2sGawalmandi%20Food%20Street%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>ROYAL SERVICES</h2>
+            <p class="script-font" style="font-size: 2rem; margin-top: 20px;">Experience Royal Treatment</p>
+        </div>
+        
+        <div class="royal-services-grid">
+            <!-- Original Services -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Royal Dine-In</h3>
+                <p>Experience our authentic cuisine in a royal dining environment with valet service</p>
             </div>
             
-            <div class="royal-services-grid">
-                <div class="royal-service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Royal Dine-In</h3>
-                    <p>Experience our authentic cuisine in a royal dining environment with valet service</p>
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-horse"></i>
                 </div>
-                
-                <div class="royal-service-card royal-special">
-                    <div class="service-icon">
-                        <i class="fas fa-horse"></i>
-                    </div>
-                    <h3>Royal Delivery</h3>
-                    <p>Get your royal feast delivered to your palace. Call: 0330-6863355</p>
-                </div>
-                
-                <div class="royal-service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Catering Services</h3>
-                    <p>Make your events royal with our professional catering for weddings and gatherings</p>
-                </div>
-                
-                <div class="royal-service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-champagne-glasses"></i>
-                    </div>
-                    <h3>Private Events</h3>
-                    <p>Host your celebrations in our exclusive royal banquet halls</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>ROYAL CONTACT</h2>
-                <p class="script-font" style="font-size: 2rem; margin-top: 20px;">Visit Our Royal Court</p>
+                <h3>Royal Delivery</h3>
+                <p>Get your royal feast delivered to your palace. Call: 0330-6863355</p>
             </div>
             
-            <div class="royal-contact-grid">
-                <div class="royal-contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <h3>Royal Location</h3>
-                    <p>140-A G.T Road, Singhpura<br>Lahore, Pakistan</p>
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-gem"></i>
                 </div>
-                
-                <div class="royal-contact-item royal-special">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-volume"></i>
-                    </div>
-                    <h3>Royal Phone Lines</h3>
-                    <p>042-36863333<br>042-36863355<br>0330-6863355 (Royal Delivery)</p>
+                <h3>Catering Services</h3>
+                <p>Make your events royal with our professional catering for weddings and gatherings</p>
+            </div>
+            
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-champagne-glasses"></i>
                 </div>
-                
-                <div class="royal-contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope-open-text"></i>
-                    </div>
-                    <h3>Royal Correspondence</h3>
-                    <p>lahoreshahigila4477@gmail.com<br>www.Lahoreshahigila.com.pk</p>
+                <h3>Private Events</h3>
+                <p>Host your celebrations in our exclusive royal banquet halls</p>
+            </div>
+            
+            <!-- New Accessibility Services -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-wheelchair"></i>
                 </div>
-                
-                <div class="royal-contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Royal Hours</h3>
-                    <p>Monday - Sunday<br>12:00 PM - 12:00 AM<br>Royal Delivery till 11:00 PM</p>
+                <h3>Royal Accessibility</h3>
+                <p>Wheelchair accessible entrance, parking, restrooms & seating for all guests</p>
+            </div>
+            
+            <!-- Service Options -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-utensils"></i>
                 </div>
+                <h3>Dining Options</h3>
+                <p>Outdoor seating • No-contact delivery • Takeout • Dine-in • Table service</p>
+            </div>
+            
+            <!-- Royal Highlights -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Royal Highlights</h3>
+                <p>Fireplace • Great coffee & desserts • Live music • Rooftop seating • Private dining</p>
+            </div>
+            
+            <!-- Culinary Experience -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cheese"></i>
+                </div>
+                <h3>Royal Cuisine</h3>
+                <p>Halal food • Vegan & Vegetarian options • All you can eat • Small plates • Quick bites</p>
+            </div>
+            
+            <!-- Dining Hours -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Royal Dining Hours</h3>
+                <p>Brunch • Lunch • Dinner • Dessert • Late-night food • Happy hour</p>
+            </div>
+            
+            <!-- Atmosphere -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Royal Atmosphere</h3>
+                <p>Casual • Cozy • Historic • Romantic • Upscale • Quiet • Trendy settings</p>
+            </div>
+            
+            <!-- Family Friendly -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h3>Family Royalty</h3>
+                <p>Kids' menu • High chairs • Good for birthdays • Family-friendly environment</p>
+            </div>
+            
+            <!-- Convenience -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-parking"></i>
+                </div>
+                <h3>Royal Convenience</h3>
+                <p>Free parking lot & street parking • All major credit/debit cards • NFC payments</p>
+            </div>
+            
+            <!-- Planning -->
+            <div class="royal-service-card">
+                <div class="service-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3>Royal Planning</h3>
+                <p>Reservations accepted • Lunch & dinner reservations recommended • Group bookings</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p class="script-font" style="font-size: 1.8rem; margin-top: 10px;">We await your presence</p>
+                </div>
+                
+                <div class="royal-contact-grid">
+                    <div class="royal-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+92 42 1234 5678<br>+92 42 8765 4321</p>
+                    </div>
+
+                    <div class="royal-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>info@shahiqila.pk<br>reservations@shahiqila.pk</p>
+                    </div>
+
+                    <div class="royal-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Hours</h3>
+                        <p>Daily: 12:00 PM - 12:00 AM</p>
+                    </div>
+
+                    <div class="royal-contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Address</h3>
+                        <p>Food Street, Gawalmandi<br>Lahore, Pakistan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="royal-footer-content">
+                <!-- Brand Section -->
                 <div class="royal-footer-logo">
-                    <div class="footer-logo-img">👑</div>
-                    <div class="royal-tagline">Where Royalty Dines</div>
-                    <p class="royal-footer-text">Serving authentic royal Pakistani cuisine in Lahore since 1985. Our legacy of flavors continues to reign supreme.</p>
+                    <div class="footer-logo-img"><img src="logo.ico" alt="Shahi Qila Logo"></div>
+                    <div class="royal-tagline">Shahi Qila</div>
+                    <p class="royal-footer-text">Authentic royal Pakistani cuisine since 1985. Experience the legacy of Mughal flavors.</p>
                     <div class="royal-social-icons">
-                        <a href="#" class="royal-social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="royal-social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="royal-social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="royal-social-icon"><i class="fab fa-tripadvisor"></i></a>
+                        <a href="#" class="royal-social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="royal-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="royal-social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="royal-social-icon" title="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
                     </div>
                 </div>
                 
+                <!-- Quick Links -->
                 <div class="royal-footer-links">
-                    <h4>Royal Navigation</h4>
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#home"><i class="fas fa-crown"></i> Royal Entrance</a></li>
-                        <li><a href="#menu"><i class="fas fa-utensils"></i> Royal Feast</a></li>
-                        <li><a href="#services"><i class="fas fa-concierge-bell"></i> Royal Services</a></li>
-                        <li><a href="#contact"><i class="fas fa-map-marker-alt"></i> Royal Court</a></li>
+                        <li><a href="#home"><i class="fas fa-crown"></i> Home</a></li>
+                        <li><a href="#menu"><i class="fas fa-utensils"></i> Menu</a></li>
+                        <li><a href="#services"><i class="fas fa-bell"></i> Services</a></li>
+                        <li><a href="#contact"><i class="fas fa-map-pin"></i> Contact</a></li>
                     </ul>
                 </div>
                 
+                <!-- Services -->
                 <div class="royal-footer-links">
-                    <h4>Royal Services</h4>
+                    <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#services"><i class="fas fa-chair"></i> Royal Dine-In</a></li>
-                        <li><a href="#services"><i class="fas fa-motorcycle"></i> Royal Delivery</a></li>
-                        <li><a href="#services"><i class="fas fa-glass-cheers"></i> Royal Catering</a></li>
-                        <li><a href="#services"><i class="fas fa-calendar-star"></i> Royal Events</a></li>
+                        <li><a href="#"><i class="fas fa-chair"></i> Dine-In</a></li>
+                        <li><a href="#"><i class="fas fa-motorcycle"></i> Delivery</a></li>
+                        <li><a href="#"><i class="fas fa-glass-cheers"></i> Catering</a></li>
+                        <li><a href="#"><i class="fas fa-calendar"></i> Events</a></li>
                     </ul>
                 </div>
                 
+                <!-- Contact Info -->
                 <div class="royal-footer-links">
-                    <h4>Royal Contact</h4>
+                    <h4>Contact Us</h4>
                     <ul>
                         <li><a href="tel:04236863333"><i class="fas fa-phone"></i> 042-36863333</a></li>
-                        <li><a href="tel:03306863355"><i class="fas fa-motorcycle"></i> 0330-6863355</a></li>
-                        <li><a href="mailto:lahoreshahigila4477@gmail.com"><i class="fas fa-envelope"></i> Royal Email</a></li>
-                        <li><a href="#contact"><i class="fas fa-map-pin"></i> G.T Road, Lahore</a></li>
+                        <li><a href="tel:03306863355"><i class="fas fa-phone"></i> 0330-6863355</a></li>
+                        <li><a href="mailto:info@shahiqila.com"><i class="fas fa-envelope"></i> Email Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-map-marker-alt"></i> G.T Road, Lahore</a></li>
                     </ul>
                 </div>
             </div>
             
+            <!-- Copyright -->
             <div class="royal-copyright">
-                <p>© 2023 Shahi Qila Restaurant. All Royal Rights Reserved. | Reigning Since 1985</p>
-                <p style="margin-top: 15px; font-size: 0.9rem;">The Royal Palace of Lahori Cuisine</p>
+                <p>© 2025 Shahi Qila Restaurant. All Rights Reserved.</p>
+                <p>Serving Royal Pakistani Cuisine Since 1985</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-crown"></i>';
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-crown"></i>';
+        // Menu Category Navigation
+        document.querySelectorAll('.menu-nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and categories
+                document.querySelectorAll('.menu-nav-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll('.royal-category').forEach(cat => {
+                    cat.classList.remove('active');
+                });
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // Show corresponding category
+                const categoryId = this.getAttribute('data-category');
+                document.getElementById(categoryId).classList.add('active');
             });
         });
 
-        // Smooth scrolling with royal effect
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 120,
-                        behavior: 'smooth'
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
                 }
             });
         });
 
-        // Create royal stars
-        function createRoyalStars() {
-            const starsContainer = document.createElement('div');
-            starsContainer.style.position = 'fixed';
-            starsContainer.style.top = '0';
-            starsContainer.style.left = '0';
-            starsContainer.style.width = '100%';
-            starsContainer.style.height = '100%';
-            starsContainer.style.pointerEvents = 'none';
-            starsContainer.style.zIndex = '0';
-            
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.width = Math.random() * 4 + 'px';
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 4 + 's';
-                star.style.opacity = Math.random() * 0.5 + 0.1;
-                star.style.animationDuration = Math.random() * 3 + 2 + 's';
-                
-                starsContainer.appendChild(star);
-            }
-            
-            document.body.appendChild(starsContainer);
-        }
-
-        // Initialize stars
-        createRoyalStars();
-
-        // Add royal glow to current navigation link
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                    link.style.color = 'var(--royal-gold)';
-                    link.style.textShadow = '0 0 10px rgba(245, 197, 66, 0.5)';
-                }
+        // CTA button scroll to menu
+        document.querySelector('.royal-cta').addEventListener('click', function() {
+            document.querySelector('#menu').scrollIntoView({
+                behavior: 'smooth'
             });
         });
+      // ============================================
+// MENU NAVIGATION CONTROL
+// ============================================
 
-        // Phone button click handler
-        document.querySelector('.royal-phone').addEventListener('click', function() {
-            window.location.href = 'tel:03306863355';
-        });
+function activateMenuCategory(categoryId) {
+    console.log('=== Activating category:', categoryId);
+    
+    const menuNavBtns = document.querySelectorAll('.menu-nav-btn');
+    const allCategories = document.querySelectorAll('.royal-category');
+    
+    console.log('Total menu buttons found:', menuNavBtns.length);
+    console.log('Total categories found:', allCategories.length);
+    
+    // Remove active class from all buttons
+    menuNavBtns.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Hide all categories
+    allCategories.forEach(cat => {
+        cat.classList.remove('active');
+        cat.style.display = 'none';
+    });
+    
+    // Activate the selected button
+    const activeBtn = document.querySelector(`.menu-nav-btn[data-category="${categoryId}"]`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+        console.log('✓ Button activated:', categoryId);
+    } else {
+        console.error('✗ Button not found for:', categoryId);
+    }
+    
+    // Show and activate the selected category
+    const activeCategory = document.querySelector(`.royal-category[data-category="${categoryId}"]`);
+    if (activeCategory) {
+        activeCategory.classList.add('active');
+        activeCategory.style.display = 'block';
+        console.log('✓ Category shown:', categoryId);
+    } else {
+        console.error('✗ Category not found for:', categoryId);
+    }
+}
 
-        // Add royal effect to menu items on hover
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuItems = document.querySelectorAll('.royal-menu-item');
-            
-            menuItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.zIndex = '10';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.zIndex = '1';
-                });
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== DOM Content Loaded ===');
+    
+    const menuNavBtns = document.querySelectorAll('.menu-nav-btn');
+    console.log('Menu buttons available:', menuNavBtns.length);
+    
+    // Display all button attributes for debugging
+    menuNavBtns.forEach((btn, i) => {
+        const category = btn.getAttribute('data-category');
+        console.log(`Button ${i}:`, category);
+    });
+    
+    // Set first category as active on page load
+    if (menuNavBtns.length > 0) {
+        const firstCategory = menuNavBtns[0].getAttribute('data-category');
+        console.log('Activating first category:', firstCategory);
+        activateMenuCategory(firstCategory);
+    }
+    
+    // Add click listeners to all menu nav buttons
+    menuNavBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const categoryId = this.getAttribute('data-category');
+            console.log('=== CLICK EVENT ===');
+            console.log('Button clicked - category:', categoryId);
+            activateMenuCategory(categoryId);
         });
-
-        // Add subtle animation to category headers
-        const categoryHeaders = document.querySelectorAll('.category-header');
-        categoryHeaders.forEach(header => {
-            header.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(10px)';
-            });
-            
-            header.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateX(0)';
-            });
-        });
+    });
+    
+    console.log('=== Menu Navigation Initialized ===');
+});
+      
     </script>
-    <!-- 
-    Fonts: Google Fonts - SIL Open Font License (Free for Commercial Use)
-    Icons: Font Awesome Free - MIT License (Free for Commercial Use)
-    Images: Pexels - Free for Commercial Use, No Attribution Required
--->
 </body>
-</html>
+</html> 
